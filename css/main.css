@@ -2426,7 +2426,7 @@ ul.breadcrumb li + li:last-child {
   align-self: stretch;
 }
 .header-inner {
-  background: rgba(255,255,255,0.5) none repeat scroll !important;
+  background: rgba(255,255,255,0.5);
   border-radius: initial;
   box-shadow: initial;
   width: 240px;
@@ -2669,6 +2669,20 @@ ul.breadcrumb li + li:last-child {
 .links-of-author-item span.exturl:hover {
   background: var(--body-bg-color);
   border-radius: 4px;
+}
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  padding: $site-author-image-padding;
+  max-width: 120px;
+  height: $site-author-image-height;
+  border: 1px solid #eee;
+/* 头像圆形 */
+  border-radius: 50%;
+  transition: 2s all;
+}
+.site-author-image:hover {
+  transform: rotate(360deg);
 }
 body {
   background: url("/images/background.jpg");
