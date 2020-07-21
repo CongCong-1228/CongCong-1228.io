@@ -2616,6 +2616,9 @@ ul.breadcrumb li + li:last-child {
   box-sizing: border-box;
   color: var(--text-color);
 }
+.sidebar-inner {
+  background: rgba(255,255,255,0.5) none repeat scroll !important;
+}
 .site-state-item a {
   padding: 0 10px;
 }
