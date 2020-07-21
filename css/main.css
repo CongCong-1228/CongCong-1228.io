@@ -2462,7 +2462,7 @@ ul.breadcrumb li + li:last-child {
 }
 .main-inner {
   align-self: stretch;
-  background: rgba(255,255,255,0.5) none repeat scroll !important;
+  background: rgba(255,255,255,0.5);
   border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
