@@ -2426,7 +2426,7 @@ ul.breadcrumb li + li:last-child {
   align-self: stretch;
 }
 .header-inner {
-  background: var(--content-bg-color);
+  background: rgba(255,255,255,0.5) none repeat scroll !important;
   border-radius: initial;
   box-shadow: initial;
   width: 240px;
@@ -2462,7 +2462,7 @@ ul.breadcrumb li + li:last-child {
 }
 .main-inner {
   align-self: stretch;
-  background: var(--content-bg-color);
+  background: rgba(255,255,255,0.5) none repeat scroll !important;
   border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
@@ -2564,7 +2564,7 @@ ul.breadcrumb li + li:last-child {
   width: 6px;
 }
 .sub-menu {
-  background: var(--content-bg-color);
+  background: rgba(255,255,255,0.5) none repeat scroll !important;
   border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 6px 0;
@@ -2610,13 +2610,11 @@ ul.breadcrumb li + li:last-child {
   display: none;
 }
 .sidebar-inner {
+  background: rgba(255,255,255,0.5) none repeat scroll !important;
   border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
-}
-.sidebar-inner {
-  background: rgba(255,255,255,0.5) none repeat scroll !important;
 }
 .site-state-item a {
   padding: 0 10px;
