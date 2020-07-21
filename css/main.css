@@ -2610,7 +2610,6 @@ ul.breadcrumb li + li:last-child {
   display: none;
 }
 .sidebar-inner {
-  background: var(--content-bg-color);
   border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
