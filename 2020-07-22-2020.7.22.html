@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"congcong-1228.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+  </script>
+
+  <meta name="description" content="Chip(小碎片)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter学习小结(7.22)">
+<meta property="og:url" content="http://congcong-1228.github.io/2020-07-22-2020.7.22.html">
+<meta property="og:site_name" content="Cong Cong">
+<meta property="og:description" content="Chip(小碎片)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://congcong-1228.github.io/images/Chip+onDeleted.png">
+<meta property="og:image" content="http://congcong-1228.github.io/images/FitlerChip().png">
+<meta property="og:image" content="http://congcong-1228.github.io/images/ChoiceChip().png">
+<meta property="article:published_time" content="2020-07-22T11:51:23.920Z">
+<meta property="article:modified_time" content="2020-07-22T12:47:03.203Z">
+<meta property="article:author" content="Cong Cong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://congcong-1228.github.io/images/Chip+onDeleted.png">
+
+<link rel="canonical" href="http://congcong-1228.github.io/2020-07-22-2020.7.22.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Flutter学习小结(7.22) | Cong Cong</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Cong Cong</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">想想你现在会什么</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Chip-小碎片"><span class="nav-number">1.</span> <span class="nav-text">一.Chip() (小碎片)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ActionChip-动作碎片"><span class="nav-number">1.1.</span> <span class="nav-text">1.ActionChip() (动作碎片)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-FitlerChip-过滤碎片"><span class="nav-number">1.2.</span> <span class="nav-text">2.FitlerChip() (过滤碎片)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ChoiceChip-选择碎片"><span class="nav-number">1.3.</span> <span class="nav-text">3.ChoiceChip() (选择碎片)</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cong Cong"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cong Cong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        <!--网易云音乐-->
+         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 autoplay="true"   src="//music.163.com/outchain/player?type=2&id=484249940&auto=1&height=66"></iframe>
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://congcong-1228.github.io/2020-07-22-2020.7.22.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cong Cong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cong Cong">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flutter学习小结(7.22)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-22 19:51:23 / 修改时间：20:47:03" itemprop="dateCreated datePublished" datetime="2020-07-22T19:51:23+08:00">2020-07-22</time>
+            </span>
+
+          
+            <div class="post-description">Chip(小碎片)</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一-Chip-小碎片"><a href="#一-Chip-小碎片" class="headerlink" title="一.Chip() (小碎片)"></a>一.Chip() (小碎片)</h3><p>通常会包括一个label标签显示主要内容，也可以设置avatar头像来设置小头像。也可以添加ondeleted回调来设置删除功能。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> Chip(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.avatar,                    <span class="comment">//头像</span></span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.label,           <span class="comment">//必写参数，标签内容。</span></span><br><span class="line">    <span class="keyword">this</span>.labelStyle,                <span class="comment">//标签内容样式</span></span><br><span class="line">    <span class="keyword">this</span>.labelPadding,              <span class="comment">//标签内容填充</span></span><br><span class="line">    <span class="keyword">this</span>.deleteIcon,                <span class="comment">//删除图标</span></span><br><span class="line">    <span class="keyword">this</span>.onDeleted,                 <span class="comment">//删除回调函数             </span></span><br><span class="line">    <span class="keyword">this</span>.deleteIconColor,           <span class="comment">//删除图标颜色</span></span><br><span class="line">    <span class="keyword">this</span>.deleteButtonTooltipMessage,<span class="comment">//长按删除图标提示信息</span></span><br><span class="line">    <span class="keyword">this</span>.shape,                     <span class="comment">// 小碎片形状</span></span><br><span class="line">    <span class="keyword">this</span>.clipBehavior = Clip.none,  <span class="comment">//剪辑行为(默认为none) </span></span><br><span class="line">    <span class="keyword">this</span>.focusNode,                 <span class="comment">//焦点节点</span></span><br><span class="line">    <span class="keyword">this</span>.autofocus = <span class="keyword">false</span>,         <span class="comment">//自动对焦(默认为false)</span></span><br><span class="line">    <span class="keyword">this</span>.backgroundColor,           <span class="comment">//背景颜色</span></span><br><span class="line">    <span class="keyword">this</span>.padding,                   <span class="comment">//填充</span></span><br><span class="line">    <span class="keyword">this</span>.visualDensity,             <span class="comment">//视觉密度(不知，无用过)</span></span><br><span class="line">    <span class="keyword">this</span>.materialTapTargetSize,     <span class="comment">//材料丝锥目标尺寸(不知)</span></span><br><span class="line">    <span class="keyword">this</span>.elevation,                 <span class="comment">//阴影模糊高度</span></span><br><span class="line">    <span class="keyword">this</span>.shadowColor,               <span class="comment">//阴影颜色</span></span><br></pre></td></tr></table></figure>
+<p>Chip()往往不会单独出现，通常我们使用的是ActionChip(),FitlerChip(),ChoiceChip()等有特殊功能的小碎片。不过他们的属性都是和Chip()类似的。<br>示例:<br><br><img src="../images/Chip+onDeleted.png" alt="avarat"></p>
+<h4 id="1-ActionChip-动作碎片"><a href="#1-ActionChip-动作碎片" class="headerlink" title="1.ActionChip() (动作碎片)"></a>1.ActionChip() (动作碎片)</h4><p>ActionChip()也可以把他当做一个按钮，他携带了一个<font color="#dd0000">onPressed()</font>回调函数，点击可以执行你想要的回调。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ActionChip(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.label,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.onPressed,  <span class="comment">//按下时</span></span><br><span class="line">    <span class="keyword">this</span>.pressElevation,       <span class="comment">//点击阴影</span></span><br><span class="line">    <span class="keyword">this</span>.tooltip,              <span class="comment">//长按工具提示</span></span><br><span class="line"></span><br><span class="line">相比于Chip()舍去了onDeleted()函数相关的配置，增加了onPressed()函数。更像是一个按钮小碎片。</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-FitlerChip-过滤碎片"><a href="#2-FitlerChip-过滤碎片" class="headerlink" title="2.FitlerChip() (过滤碎片)"></a>2.FitlerChip() (过滤碎片)</h4><p>FitlerChip()可以结合CheckBox()和Switch()来使用,他携带了一个<br><font color="#dd0000">OnSelected()</font>回调函数，表示选定时的状态。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> FilterChip(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.label,</span><br><span class="line">    <span class="keyword">this</span>.selected = <span class="keyword">false</span>,        <span class="comment">//默认选中状态为false</span></span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.onSelected,</span><br><span class="line">    <span class="keyword">this</span>.selectedShadowColor,    <span class="comment">//选中阴影颜色</span></span><br><span class="line">    <span class="keyword">this</span>.showCheckmark,          <span class="comment">//显示对勾标记</span></span><br><span class="line">    <span class="keyword">this</span>.checkmarkColor,         <span class="comment">//对勾颜色设置</span></span><br></pre></td></tr></table></figure>
+<p>示例:<br><br><img src="../images/FitlerChip().png" alt="avarat"></p>
+<h4 id="3-ChoiceChip-选择碎片"><a href="#3-ChoiceChip-选择碎片" class="headerlink" title="3.ChoiceChip() (选择碎片)"></a>3.ChoiceChip() (选择碎片)</h4><p>ChoiceChip()小碎片携带了一个<font color="#dd0000">OnSelected()</font>回调函数,显示选中这个碎片后可以执行想要的操作，和FitlerChip()类似。代表集合中的单个选择。选择筹码包含相关的描述性文字或类别。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ChoiceChip(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.label,  </span><br><span class="line">    <span class="keyword">this</span>.onSelected,               <span class="comment">//选择后回调函数</span></span><br><span class="line">    <span class="keyword">this</span>.pressElevation,           <span class="comment">//选中阴影高度</span></span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.selected,      <span class="comment">//已选择，不能为空 bool类型</span></span><br><span class="line">    <span class="keyword">this</span>.selectedColor,           <span class="comment">//选中颜色</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：<br><br><img src="../images/ChoiceChip().png" alt="avarat"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020-07-21-2020.07.21.html" rel="prev" title="Flutter学习小结(7.21)">
+      <i class="fa fa-chevron-left"></i> Flutter学习小结(7.21)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cong Cong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+<span id="busuanzi_container_site_uv">
+  本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
